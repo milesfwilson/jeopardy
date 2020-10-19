@@ -5,6 +5,7 @@ import { isValidProp } from "./Utils/isValidProp.js"
 class AppState extends EventEmitter {
   /** @type {Value[]} */
   values = []
+  playerScore = { score: 0 }
 }
 
 export const ProxyState = new Proxy(new AppState(), {

@@ -3,9 +3,22 @@ import Value from "../Models/Value.js";
 import { api } from './AxiosService.js'
 
 class ValuesService {
+  score(score) {
+
+
+    if (localStorage.score) {
+      localStorage.score = parseInt(localStorage.score) + parseInt(score)
+    } else {
+      localStorage.score = 0
+      localStorage.score = parseInt(score)
+    }
+    document.getElementById('score').innerText = localStorage.score
+
+  }
 
   constructor() {
     this.getQuestion()
+
   }
 
   getQuestion() {

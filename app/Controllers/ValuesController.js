@@ -13,7 +13,12 @@ function _draw() {
 export default class ValuesController {
   constructor() {
     ProxyState.on("values", _draw);
+    ProxyState.on("playerScore", _draw)
     _draw()
+  }
+
+  score(score) {
+    valuesService.score(score)
   }
 
 }
